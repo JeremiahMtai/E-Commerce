@@ -41,11 +41,21 @@ Route::controller(HomeController::class)->group(function (){
     // confirm order
     Route::post('/order',[HomeController::class,"confirmorder"]);
 
+    // save
+    Route::post('/save',[HomeController::class,"save"]);
+
 });
 
 Route::controller(AdminController::class)->group(function (){
 
+    // show product
     Route::get('/product',[AdminController::class,"Product"]);
+
+    
+    // save
+    Route::get('/showsaving',[AdminController::class,'showsaving']);
+    
+    Route::get('/deletesaving/{id}',[AdminController::class,"deletesaving"]);
     
     Route::get('/index',[AdminController::class,"Index"]);
 

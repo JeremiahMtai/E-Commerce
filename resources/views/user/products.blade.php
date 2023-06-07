@@ -20,7 +20,7 @@
         @foreach($data as $product)
           <div class="col-md-4">
             <div class="product-item">
-              <a href="#"><img height="300" width="150" src="/productimage/{{$product->image}}" alt=""></a>
+              <img height="200" width="150" src="/productimage/{{$product->image}}" alt="">
               <div class="down-content">
                 <a href="#"><h4>{{$product->title}}</h4></a>
                 <h6>${{$product->price}}</h6>

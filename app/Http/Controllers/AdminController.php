@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 // models
 use App\Models\Product;
 use App\Models\Order;
+use App\Models\Save;
 
 // end of models
 
@@ -42,6 +43,8 @@ class AdminController extends Controller
     {
         return view('admin.index');
     }
+
+    // uploadproduct
     public function uploadproduct(Request $request)
     {
         $data=new product;
@@ -51,7 +54,7 @@ class AdminController extends Controller
         $imagename=time().'.'.$image->getClientOriginalExtension();
 
         $request->file->move('productimage', $imagename); 
-
+ 
         $data->image=$imagename;
 
         $data->title=$request->title;
@@ -142,6 +145,23 @@ class AdminController extends Controller
         $order->save();
 
         return redirect()->back();
+    }
+
+    // showsaving
+    public function showsaving()
+    {
+        $save=save::all();
+        return view('admin.showsaving',compact('save'));
+    }
+
+    // delete saving
+    public function deletesaving($id)
+    {
+        $save=save::find($id);
+
+        $save->delete();
+
+        return redirect()->back()->with('message','Saving Deleted Successfully !!');
     }
 
     

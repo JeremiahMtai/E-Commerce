@@ -97,5 +97,16 @@
             </a>
           </li>
           <!-- order -->
+
+          <!-- Save -->
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('showsaving')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+              </span>
+              <span class="menu-title"> Show Savings</span>
+            </a>
+          </li>
+          <!-- save -->
         </ul>
       </nav>

@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Product;
 use App\Models\Cart;
 use App\Models\Order;
+use App\Models\Save;
 
 // End of model
 
@@ -89,7 +90,6 @@ class HomeController extends Controller
             $cart->name=$user->name;
             $cart->phone=$user->phone;
             $cart->address=$user->address;
-
             $cart->product_title=$product->title;
             $cart->quantity=$request->quantity;
             $cart->price=$product->price;
@@ -170,6 +170,27 @@ class HomeController extends Controller
 
         return redirect()->back()->with('message','Order Confirmed Successfully !!');
         
+    }
+
+  
+    public function save(Request $request)
+    {
+
+            $data= new save;
+            $data->name=$request->name;
+
+            $data->phone=$request->phone;
+
+            $data->address=$request->address;
+
+            $data->save_type=$request->save_type;
+
+            $data->amount=$request->amount;
+
+            $data->save();
+
+            return redirect()->back()->with('message','Saved  Successfully !!');
+       
     }
 
 }

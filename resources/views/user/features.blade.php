@@ -49,3 +49,79 @@
         </div>
       </div>
     </div>
+
+<section id="save">
+
+   <style>
+   .title{
+      color: white;
+      padding-top: 25px;
+      font-size: 25px;
+    }
+    label{
+      display: inline-block;
+      width: 200px;
+    }
+
+    input{
+      color: black;
+    }
+
+  </style>
+   <!-- style -->
+
+        
+        <div class="main-panel">
+          <div class="content-wrapper">
+
+              <!-- @if(session()->has('message'))
+
+              
+              <div class="alert alert-success">
+
+              {{session()->get('message')}}
+              
+                <button type="button" class="close" data-dismiss="alert">X</button>               
+                
+              </div>
+              @endif -->
+
+
+              <div class="container" align="center">
+            <!-- <h1 style="text-transform: uppercase; font-weight: bold; background-color: gray; width: 100px;">Customer Order</h1> -->
+            <br>
+              <form action="{{url('save')}}" method="post"> 
+              @csrf
+
+                <div style="padding: 15px; border-radius: 30px;">
+                  <label for="">Member Name</label>
+                  <input style="color: black" type="text" name="name" placeholder="Give a product title" required>
+                </div>
+
+                <div style="padding: 15px; border-radius: 30px;" clas>
+                  <label for="">Phone</label>
+                  <input style="color: black" type="number" name="phone" placeholder="Give a price" required>
+                </div>
+
+                <div style="padding: 15px; border-radius: 30px;">
+                  <label for="">Address</label>
+                  <input style="color: black" type="text" name="address" placeholder="Give a a description" required>
+                </div>
+
+                <div style="padding: 15px; border-radius: 30px;">
+                  <label for="">Save Type</label>
+                  <input style="color: black" type="text" name="save_type" placeholder="Give a a description" required>
+                </div>                
+
+                <div style="padding: 15px; border-radius: 30px;">
+                  <label for="">Amount to Save</label>
+                  <input style="color: black" type="number" name="amount" placeholder="Ksh." required>
+                </div>
+
+                <div style="padding: 15px; border-radius: 30px;">
+                  <input class="btn btn-success" type="submit" value="Save" name="" id="">
+                </div>
+              </form>
+              </div>
+            </div>
+    </section>
